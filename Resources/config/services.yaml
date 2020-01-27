@@ -1,0 +1,26 @@
+services:
+  HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface:
+    class: HalloVerden\Security\Services\AccessDefinitionService
+    arguments:
+      $accessDefinitions: !tagged 'hallo_verden_security.access_definition'
+
+  HalloVerden\Security\Interfaces\AuthenticatorDeciderServiceInterface:
+    class: HalloVerden\Security\Services\AuthenticatorDeciderService
+    arguments:
+      $reader: '@Doctrine\Common\Annotations\Reader'
+
+  HalloVerden\Security\Interfaces\SecurityInterface:
+    class: HalloVerden\Security\Security
+    arguments:
+      $security: '@Symfony\Component\Security\Core\Security'
+      $accessDecisionManager: '@Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface'
+
+  HalloVerden\SecurityBundle\EventListener\AccessDefinitionListener:
+    tags:
+      - {name: 'kernel.event_subscriber'}
+    arguments:
+      $accessDefinitionService: '@HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface'
+
+  HalloVerden\Security\AccessDefinitions\Metadata\Drivers\AccessDefinitionAnnotationDriver:
+    arguments:
+      $reader: '@Doctrine\Common\Annotations\Reader'

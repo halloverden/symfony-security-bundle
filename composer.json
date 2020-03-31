@@ -13,12 +13,12 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.2",
-        "symfony/dependency-injection": "^4.4|^5.0",
-        "symfony/http-kernel": "^4.4|^5.0",
-        "halloverden/symfony-security": "^1.1",
-        "symfony/event-dispatcher": "^4.4|^5.0",
-        "symfony/security-bundle": "^4.4|^5.0",
-        "symfony/framework-bundle": "^4.4|^5.0"
+        "symfony/dependency-injection": "^4.4.7|^5.0.7",
+        "symfony/http-kernel": "^4.4.7|^5.0.7",
+        "halloverden/symfony-security": "^1.1.1",
+        "symfony/event-dispatcher": "^4.4.7|^5.0.7",
+        "symfony/security-bundle": "^4.4.7|^5.0.7",
+        "symfony/framework-bundle": "^4.4.7|^5.0.7"
     },
     "autoload": {
         "psr-4": {

@@ -9,6 +9,16 @@
             "email": "tom.roar@halloverden.no"
         }
     ],
+    "keywords": [
+        "access definition",
+        "authenticator",
+        "security",
+        "symfony",
+        "voter"
+    ],
+    "support": {
+        "issues": "https://github.com/halloverden/symfony-security-bundle/issues"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {

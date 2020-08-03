@@ -1,15 +1,14 @@
-HalloVerdenSecurityBundle
-==============================
+# Security Bundle
 
-Installation
-============
+Provides a handy event listener for the [@halloverden/symfony-security](https://github.com/halloverden/symfony-security) package.
+
+# Installation
 
 Make sure Composer is installed globally, as explained in the
 [installation chapter](https://getcomposer.org/doc/00-intro.md)
 of the Composer documentation.
 
-Applications that use Symfony Flex
-----------------------------------
+## Applications that use Symfony Flex
 
 Open a command console, enter your project directory and execute:
 
@@ -17,8 +16,7 @@ Open a command console, enter your project directory and execute:
 $ composer require halloverden/symfony-security-bundle
 ```
 
-Applications that don't use Symfony Flex
-----------------------------------------
+## Applications that don't use Symfony Flex
 
 ### Step 1: Download the Bundle
 
@@ -42,3 +40,14 @@ return [
     HalloVerden\SecurityBundle\HalloVerdenSecurityBundle::class => ['all' => true],
 ];
 ```
+
+### Usage
+This bundle adds an event listener to the `onKernelControllerArguments` event, that ensures the execution of the Access Definition handler in the [@halloverden/symfony-security](https://github.com/halloverden/symfony-security) package. For more information on the use of Access Definitions, see the [documentation](https://github.com/halloverden/symfony-security).
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

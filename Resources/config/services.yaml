@@ -1,9 +1,4 @@
 services:
-  HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface:
-    class: HalloVerden\Security\Services\AccessDefinitionService
-    arguments:
-      $accessDefinitions: !tagged 'hallo_verden_security.access_definition'
-
   HalloVerden\Security\Interfaces\AuthenticatorDeciderServiceInterface:
     class: HalloVerden\Security\Services\AuthenticatorDeciderService
     arguments:
@@ -15,12 +10,34 @@ services:
       $security: '@Symfony\Component\Security\Core\Security'
       $accessDecisionManager: '@Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface'
 
-  HalloVerden\SecurityBundle\EventListener\AccessDefinitionListener:
-    tags:
-      - {name: 'kernel.event_subscriber'}
+  hv.security_bundle.access_definitions.file_locator:
+    class: Metadata\Driver\FileLocator
     arguments:
-      $accessDefinitionService: '@HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface'
+      $dirs: []
 
-  HalloVerden\Security\AccessDefinitions\Metadata\Drivers\AccessDefinitionAnnotationDriver:
+  HalloVerden\Security\AccessDefinitions\Metadata\Drivers\AccessDefinitionYamlDriver:
     arguments:
-      $reader: '@Doctrine\Common\Annotations\Reader'
+      $locator: '@hv.security_bundle.access_definitions.file_locator'
+
+  HalloVerden\Security\Interfaces\OauthAuthenticatedAccessTokenProviderServiceInterface:
+    class: HalloVerden\Security\Services\OauthAuthenticatedAccessTokenProviderService
+    arguments:
+      $tokenStorage: '@security.token_storage'
+
+  HalloVerden\Security\Voters\OauthAuthorizationVoter:
+    arguments:
+      $security: '@HalloVerden\Security\Interfaces\SecurityInterface'
+      $accessTokenProvider: '@HalloVerden\Security\Interfaces\OauthAuthenticatedAccessTokenProviderServiceInterface'
+    tags:
+      - { name: security.voter }
+
+  hv.security.access_definitions.metadata_factory:
+    class: Metadata\MetadataFactory
+    arguments:
+      $driver: '@HalloVerden\Security\AccessDefinitions\Metadata\Drivers\AccessDefinitionYamlDriver'
+
+  HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface:
+    class: HalloVerden\Security\Services\AccessDefinitionService
+    arguments:
+      $metadataFactory: '@hv.security.access_definitions.metadata_factory'
+      $security: '@HalloVerden\Security\Interfaces\SecurityInterface'

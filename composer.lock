@@ -357,16 +357,16 @@
         },
         {
             "name": "halloverden/symfony-http-exceptions",
-            "version": "0.3.3",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/halloverden/symfony-http-exceptions.git",
-                "reference": "75957c71e5683d7444098ca2d51643ca971ed9cc"
+                "reference": "0e0c8f23356b6f56b8349f45a5785081a4217fba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/halloverden/symfony-http-exceptions/zipball/75957c71e5683d7444098ca2d51643ca971ed9cc",
-                "reference": "75957c71e5683d7444098ca2d51643ca971ed9cc",
+                "url": "https://api.github.com/repos/halloverden/symfony-http-exceptions/zipball/0e0c8f23356b6f56b8349f45a5785081a4217fba",
+                "reference": "0e0c8f23356b6f56b8349f45a5785081a4217fba",
                 "shasum": ""
             },
             "require": {
@@ -394,7 +394,7 @@
                 }
             ],
             "description": "Symfony HTTP Expcetions",
-            "time": "2020-04-06T09:40:05+00:00"
+            "time": "2020-07-31T16:52:16+00:00"
         },
         {
             "name": "halloverden/symfony-oidc-contracts",
@@ -440,18 +440,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/halloverden/symfony-security.git",
-                "reference": "bdd6bc2dc09f5ae1306c8c18e4d40a6eea2bb76a"
+                "reference": "ecb2649dcbd19bbc815e55cfdedba9de869bb645"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/bdd6bc2dc09f5ae1306c8c18e4d40a6eea2bb76a",
-                "reference": "bdd6bc2dc09f5ae1306c8c18e4d40a6eea2bb76a",
+                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/ecb2649dcbd19bbc815e55cfdedba9de869bb645",
+                "reference": "ecb2649dcbd19bbc815e55cfdedba9de869bb645",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "^1.8",
                 "doctrine/collections": "^1.6",
-                "halloverden/symfony-http-exceptions": "^0.3.1",
+                "halloverden/symfony-http-exceptions": "^1.0",
                 "halloverden/symfony-oidc-contracts": "^1.0",
                 "jms/metadata": "^2.1",
                 "jms/serializer": "^3.8",
@@ -483,7 +483,7 @@
                 }
             ],
             "description": "Compliments Symfony Security with Access Definitions and utils",
-            "time": "2020-08-07T12:13:14+00:00"
+            "time": "2020-08-10T11:57:25+00:00"
         },
         {
             "name": "jms/metadata",

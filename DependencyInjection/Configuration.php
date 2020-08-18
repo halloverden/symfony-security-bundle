@@ -23,6 +23,7 @@ class Configuration implements ConfigurationInterface {
           ->scalarPrototype()->end()
         ->end()
         ->arrayNode('access_definitions')
+          ->addDefaultsIfNotSet()
           ->children()
             ->arrayNode('dirs')
               ->defaultValue([])

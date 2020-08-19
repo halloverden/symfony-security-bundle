@@ -22,6 +22,17 @@ class Configuration implements ConfigurationInterface {
           ->defaultValue([])
           ->scalarPrototype()->end()
         ->end()
+        ->arrayNode('access_definitions')
+          ->addDefaultsIfNotSet()
+          ->children()
+            ->arrayNode('dirs')
+              ->defaultValue([])
+              ->scalarPrototype()->end()
+            ->end()
+            ->scalarNode('cache')->defaultValue('file')->end()
+            ->scalarNode('file_cache_dir')->defaultValue('%kernel.cache_dir%/hv_security_access_definitions')->end()
+          ->end()
+        ->end()
       ->end()
     ;
 

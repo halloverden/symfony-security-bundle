@@ -1,2 +1,5 @@
 hallo_verden_security:
   admin_roles: []
+  access_definitions:
+    dirs: []
+    cache: file

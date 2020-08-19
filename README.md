@@ -48,7 +48,7 @@ Authenticators
 
 Authenticators can be used to allow authentication with an access token from your OpenID provider.
 
-1. Create class that implements `HalloVerden\Security\Interfaces\OauthUserProviderServiceInterface`
+1. Create a class that implements `HalloVerden\Security\Interfaces\OauthUserProviderServiceInterface`
 2. Enable authenticators and the class you want to use as services
     ```yaml
       HalloVerden\Security\Interfaces\OauthUserProviderServiceInterface:
@@ -112,7 +112,7 @@ App\Entity\Requests\TestRequest:
 
 ```
 
-Add this path for this access definition in the config file:
+Add the path for this access definition in the config file:
 ```yaml
 hallo_verden_security:
   access_definitions:

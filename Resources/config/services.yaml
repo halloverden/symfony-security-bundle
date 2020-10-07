@@ -41,3 +41,14 @@ services:
     arguments:
       $metadataFactory: '@hv.security.access_definitions.metadata_factory'
       $security: '@HalloVerden\Security\Interfaces\SecurityInterface'
+
+  HalloVerden\Security\Interfaces\AccessDefinitionFilterServiceInterface:
+    class: HalloVerden\Security\Services\AccessDefinitionFilterService
+    arguments:
+      $accessDefinitionService: '@HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface'
+
+  HalloVerden\SecurityBundle\EventListener\AccessDefinableListener:
+    tags:
+      - {name: 'kernel.event_subscriber'}
+    arguments:
+      $accessDefinitionFilterService: '@HalloVerden\Security\Interfaces\AccessDefinitionFilterServiceInterface'

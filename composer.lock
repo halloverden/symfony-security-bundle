@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7edef97bdbf30cc4ea09679c53f57302",
+    "content-hash": "fae5b82633f416dcd8c587b242353c0d",
     "packages": [
         {
             "name": "brick/math",
@@ -493,16 +493,16 @@
         },
         {
             "name": "halloverden/symfony-security",
-            "version": "dev-feature/access-definable-entity-filters",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/halloverden/symfony-security.git",
-                "reference": "9e16df4c4fa9e26f902202002ee80a0e247432f7"
+                "reference": "cdb551c51b4b1775f45faf7727f06109d5a6c37d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/9e16df4c4fa9e26f902202002ee80a0e247432f7",
-                "reference": "9e16df4c4fa9e26f902202002ee80a0e247432f7",
+                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/cdb551c51b4b1775f45faf7727f06109d5a6c37d",
+                "reference": "cdb551c51b4b1775f45faf7727f06109d5a6c37d",
                 "shasum": ""
             },
             "require": {
@@ -544,7 +544,7 @@
                 }
             ],
             "description": "Compliments Symfony Security with Access Definitions and utils",
-            "time": "2020-10-06T11:58:26+00:00"
+            "time": "2020-10-08T13:32:51+00:00"
         },
         {
             "name": "jms/metadata",
@@ -4361,9 +4361,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "halloverden/symfony-security": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

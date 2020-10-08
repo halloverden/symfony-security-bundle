@@ -9,6 +9,7 @@ use HalloVerden\Security\AccessDefinitions\Constraints\HasAccessValidator;
 use HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface;
 use HalloVerden\Security\Interfaces\AuthenticatorDeciderServiceInterface;
 use HalloVerden\Security\Interfaces\SecurityInterface;
+use HalloVerden\Security\Voters\BaseVoter;
 use Metadata\Cache\FileCache;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Alias;
@@ -42,6 +43,10 @@ class HalloVerdenSecurityExtension extends Extension {
 
     $definition = $container->getDefinition(SecurityInterface::class);
     $definition->setArgument('$adminRoles', $config['admin_roles']);
+
+    $container->registerForAutoconfiguration(BaseVoter::class)
+      ->addTag('security.voter')
+      ->addMethodCall('setAccessDefinitionService', [new Reference(AccessDefinitionServiceInterface::class)]);
 
     if (class_exists(ConstraintValidator::class)) {
       $hasAccessValidator = new Definition(HasAccessValidator::class, [new Reference(AccessDefinitionServiceInterface::class)]);

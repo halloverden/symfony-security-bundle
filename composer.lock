@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fae5b82633f416dcd8c587b242353c0d",
+    "content-hash": "47992fe511b1565460bb5081e78a0565",
     "packages": [
         {
             "name": "brick/math",
@@ -493,16 +493,16 @@
         },
         {
             "name": "halloverden/symfony-security",
-            "version": "2.1.0",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/halloverden/symfony-security.git",
-                "reference": "cdb551c51b4b1775f45faf7727f06109d5a6c37d"
+                "reference": "e31df7aeec3ea1d6cd95bab8d387e7361831dea2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/cdb551c51b4b1775f45faf7727f06109d5a6c37d",
-                "reference": "cdb551c51b4b1775f45faf7727f06109d5a6c37d",
+                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/e31df7aeec3ea1d6cd95bab8d387e7361831dea2",
+                "reference": "e31df7aeec3ea1d6cd95bab8d387e7361831dea2",
                 "shasum": ""
             },
             "require": {
@@ -544,7 +544,7 @@
                 }
             ],
             "description": "Compliments Symfony Security with Access Definitions and utils",
-            "time": "2020-10-08T13:32:51+00:00"
+            "time": "2020-10-08T16:30:52+00:00"
         },
         {
             "name": "jms/metadata",

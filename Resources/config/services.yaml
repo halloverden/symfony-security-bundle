@@ -31,16 +31,25 @@ services:
     tags:
       - { name: security.voter }
 
+  HalloVerden\Security\Voters\AuthenticationVoter:
+    tags:
+      - { name: security.voter }
+
   hv.security.access_definitions.metadata_factory:
     class: Metadata\MetadataFactory
     arguments:
       $driver: '@HalloVerden\Security\AccessDefinitions\Metadata\Drivers\AccessDefinitionYamlDriver'
 
+  HalloVerden\Security\Interfaces\AccessDefinitionAccessDeciderServiceInterface:
+    class: HalloVerden\Security\Services\AccessDefinitionAccessDeciderService
+    arguments:
+      $security: '@HalloVerden\Security\Interfaces\SecurityInterface'
+
   HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface:
     class: HalloVerden\Security\Services\AccessDefinitionService
     arguments:
       $metadataFactory: '@hv.security.access_definitions.metadata_factory'
-      $security: '@HalloVerden\Security\Interfaces\SecurityInterface'
+      $accessDeciderService: '@HalloVerden\Security\Interfaces\AccessDefinitionAccessDeciderServiceInterface'
 
   HalloVerden\Security\Interfaces\AccessDefinitionFilterServiceInterface:
     class: HalloVerden\Security\Services\AccessDefinitionFilterService
@@ -52,3 +61,12 @@ services:
       - {name: 'kernel.event_subscriber'}
     arguments:
       $accessDefinitionFilterService: '@HalloVerden\Security\Interfaces\AccessDefinitionFilterServiceInterface'
+
+  HalloVerden\Security\AccessDefinitions\JMS\ExpressionLanguage\ExpressionFunction\HasAccessFunction:
+    arguments:
+      $accessDefinitionService: '@HalloVerden\Security\Interfaces\AccessDefinitionServiceInterface'
+      $tokenStorage: '@security.token_storage'
+
+  HalloVerden\Security\AccessDefinitions\JMS\ExpressionLanguage\AccessDefinitionExpressionLanguageProvider:
+    arguments:
+      $hasAccessFunction: '@HalloVerden\Security\AccessDefinitions\JMS\ExpressionLanguage\ExpressionFunction\HasAccessFunction'

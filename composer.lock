@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47992fe511b1565460bb5081e78a0565",
+    "content-hash": "d224c192343c7e68cbc9f86c80d42c5b",
     "packages": [
         {
             "name": "brick/math",
@@ -493,17 +493,11 @@
         },
         {
             "name": "halloverden/symfony-security",
-            "version": "2.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/halloverden/symfony-security.git",
-                "reference": "e31df7aeec3ea1d6cd95bab8d387e7361831dea2"
-            },
+            "version": "dev-feature/ID-273-handle-owner-or-everyone-in-access-definitions",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/e31df7aeec3ea1d6cd95bab8d387e7361831dea2",
-                "reference": "e31df7aeec3ea1d6cd95bab8d387e7361831dea2",
-                "shasum": ""
+                "type": "path",
+                "url": "/home/tomme/projects/halloverden/symfony-security",
+                "reference": "e31df7aeec3ea1d6cd95bab8d387e7361831dea2"
             },
             "require": {
                 "doctrine/annotations": "^1.8",
@@ -514,6 +508,7 @@
                 "jms/serializer": "^3.8",
                 "php": "^7.2",
                 "symfony/config": "^v4.4.13|^5.1.5",
+                "symfony/expression-language": "^v4.4.13|^5.1.5",
                 "symfony/security-core": "^v4.4.13|^5.1.5",
                 "symfony/security-guard": "^v4.4.13|^5.1.5",
                 "symfony/yaml": "^v4.4.13|^5.1.5",
@@ -529,7 +524,6 @@
                     "HalloVerden\\Security\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -544,7 +538,9 @@
                 }
             ],
             "description": "Compliments Symfony Security with Access Definitions and utils",
-            "time": "2020-10-08T16:30:52+00:00"
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "jms/metadata",
@@ -1567,6 +1563,70 @@
                 }
             ],
             "time": "2020-09-07T11:33:47+00:00"
+        },
+        {
+            "name": "symfony/expression-language",
+            "version": "v5.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/expression-language.git",
+                "reference": "7bf30a4e29887110f8bd1882ccc82ee63c8a5133"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/expression-language/zipball/7bf30a4e29887110f8bd1882ccc82ee63c8a5133",
+                "reference": "7bf30a4e29887110f8bd1882ccc82ee63c8a5133",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/cache": "^4.4|^5.0",
+                "symfony/polyfill-php80": "^1.15",
+                "symfony/service-contracts": "^1.1|^2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\ExpressionLanguage\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an engine that can compile and evaluate expressions",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/expression-language/tree/v5.2.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-01-27T10:15:41+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -4361,12 +4421,14 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "halloverden/symfony-security": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16dbf3e341f7ab595833d70275b73f2f",
+    "content-hash": "6c3ddc720e92981d84e05de1a91f142f",
     "packages": [
         {
             "name": "brick/math",
@@ -523,16 +523,16 @@
         },
         {
             "name": "halloverden/symfony-security",
-            "version": "3.0.0",
+            "version": "dev-feature/access-definition-metadata-expression",
             "source": {
                 "type": "git",
                 "url": "https://github.com/halloverden/symfony-security.git",
-                "reference": "bf7d0c56ae3e9074ab948d6e042a0812257180b3"
+                "reference": "79f26866d4baeae23c4a2f529e65302b767d657f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/bf7d0c56ae3e9074ab948d6e042a0812257180b3",
-                "reference": "bf7d0c56ae3e9074ab948d6e042a0812257180b3",
+                "url": "https://api.github.com/repos/halloverden/symfony-security/zipball/79f26866d4baeae23c4a2f529e65302b767d657f",
+                "reference": "79f26866d4baeae23c4a2f529e65302b767d657f",
                 "shasum": ""
             },
             "require": {
@@ -577,9 +577,9 @@
             "description": "Compliments Symfony Security with Access Definitions and utils",
             "support": {
                 "issues": "https://github.com/halloverden/symfony-security/issues",
-                "source": "https://github.com/halloverden/symfony-security/tree/3.0.0"
+                "source": "https://github.com/halloverden/symfony-security/tree/feature/access-definition-metadata-expression"
             },
-            "time": "2021-02-09T13:32:21+00:00"
+            "time": "2021-04-23T13:01:33+00:00"
         },
         {
             "name": "jms/metadata",
@@ -4496,7 +4496,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "halloverden/symfony-security": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

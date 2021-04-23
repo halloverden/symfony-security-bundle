@@ -15,7 +15,7 @@
         "php": "^7.2",
         "symfony/dependency-injection": "^v4.4.13|^5.1.5",
         "symfony/http-kernel": "^v4.4.13|^5.1.5",
-        "halloverden/symfony-security": "^3.0.0",
+        "halloverden/symfony-security": "dev-feature/access-definition-metadata-expression",
         "symfony/event-dispatcher": "^v4.4.13|^5.1.5",
         "symfony/security-bundle": "^v4.4.13|^5.1.5",
         "symfony/framework-bundle": "^v4.4.13|^5.1.5"
